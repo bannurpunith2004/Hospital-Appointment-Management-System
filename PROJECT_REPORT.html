@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CarePoint - Academic Project Report</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Inter:wght@400;600;700;800&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      color: #111827;
+      background: #f3f4f6;
+      line-height: 1.45;
+      font-size: 10.5pt;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      padding: 24mm 22mm 20mm 22mm;
+      margin: 15mm auto;
+      background: #ffffff;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      position: relative;
+      display: flex;
+      flex-col;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    @media print {
+      body {
+        background: transparent;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    /* Page Header and Footer */
+    .page-header {
+      font-size: 8.5pt;
+      font-weight: bold;
+      color: #4b5563;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      border-bottom: 1px solid #e5e7eb;
+      padding-bottom: 4px;
+    }
+
+    .page-footer {
+      font-size: 8.5pt;
+      color: #6b7280;
+      text-align: center;
+      margin-top: 15px;
+      border-top: 1px solid #e5e7eb;
+      padding-top: 6px;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .content {
+      flex: 1;
+    }
+
+    h1, h2, h3, h4 {
+      font-family: 'Times New Roman', Times, serif;
+      color: #0f172a;
+    }
+
+    .title-primary {
+      font-size: 26pt;
+      font-weight: 800;
+      color: #1e3a8a;
+      letter-spacing: 1px;
+      text-align: center;
+      margin-bottom: 6px;
+    }
+
+    .subtitle-primary {
+      font-size: 13pt;
+      text-align: center;
+      color: #374151;
+      margin-bottom: 35px;
+      font-style: italic;
+    }
+
+    .report-badge {
+      font-size: 15pt;
+      font-weight: bold;
+      text-align: center;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 11pt;
+      font-weight: bold;
+      margin-top: 10px;
+      margin-bottom: 4px;
+      color: #0f172a;
+      text-transform: uppercase;
+    }
+
+    .subsection-title {
+      font-size: 10pt;
+      font-weight: bold;
+      margin-top: 6px;
+      margin-bottom: 2px;
+      color: #1e293b;
+    }
+
+    p {
+      margin-bottom: 6px;
+      text-align: justify;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-bottom: 6px;
+    }
+
+    li {
+      margin-bottom: 2px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0;
+      font-size: 9pt;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 5px 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #1e3a8a;
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    .ascii-box {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 4px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 7.5pt;
+      line-height: 1.2;
+      padding: 8px;
+      margin: 6px 0;
+      white-space: pre;
+      overflow-x: auto;
+    }
+
+    .caption {
+      font-size: 8.5pt;
+      font-style: italic;
+      color: #4b5563;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==================== PAGE 1: COVER PAGE ==================== -->
+  <div class="page">
+    <div class="content" style="display: flex; flex-direction: column; justify-content: space-around; text-align: center; height: 100%; padding-top: 25mm;">
+      <div>
+        <div class="title-primary">CAREPOINT</div>
+        <div class="subtitle-primary">A Smart Hospital Appointment Management System</div>
+      </div>
+
+      <div style="margin: 30px 0;">
+        <div class="report-badge">PROJECT REPORT</div>
+        <p style="text-align: center; font-size: 10.5pt; color: #4b5563; max-width: 420px; margin: 0 auto;">
+          Submitted in partial fulfilment of the requirements for the academic project
+        </p>
+      </div>
+
+      <div style="margin: 25px 0;">
+        <p style="text-align: center; font-size: 10.5pt; color: #374151; margin-bottom: 6px;">Submitted by</p>
+        <p style="text-align: center; font-size: 14pt; font-weight: bold; color: #0f172a; margin-bottom: 4px;">Likith Charan R S</p>
+        <p style="text-align: center; font-size: 11pt; color: #4b5563; font-weight: 600;">1CR25MC057</p>
+      </div>
+
+      <div style="margin: 25px 0;">
+        <p style="text-align: center; font-size: 11pt; font-weight: bold; color: #1e3a8a;">MASTER OF COMPUTER APPLICATIONS</p>
+        <p style="text-align: center; font-size: 11.5pt; font-weight: bold; color: #0f172a;">CMR INSTITUTE OF TECHNOLOGY</p>
+      </div>
+
+      <div style="margin: 25px 0;">
+        <p style="text-align: center; font-size: 10.5pt; color: #374151; margin-bottom: 4px;">Guided by</p>
+        <p style="text-align: center; font-size: 13pt; font-weight: bold; color: #0f172a;">Prof. Daya Thummar</p>
+      </div>
+
+      <div style="margin-top: 30px;">
+        <p style="text-align: center; font-size: 11pt; font-weight: 600; color: #4b5563;">Academic Year 2026–2027</p>
+      </div>
+    </div>
+    <div class="page-footer">CAREPOINT | PAGE 1</div>
+  </div>
+
+  <!-- ==================== PAGE 2: ABSTRACT & INTRODUCTION ==================== -->
+  <div class="page">
+    <div class="page-header">PROJECT REPORT — CAREPOINT</div>
+    <div class="content">
+      <div style="text-align: center; margin-bottom: 12px;">
+        <div style="font-size: 15pt; font-weight: bold; color: #1e3a8a;">CAREPOINT</div>
+        <div style="font-size: 10pt; font-style: italic; color: #4b5563;">A Smart Hospital Appointment Management System</div>
+        <p style="font-size: 8.5pt; color: #6b7280; margin-top: 2px; text-align: center;">
+          Submitted in partial fulfilment of the requirements for the award of the degree of<br>
+          <b>MASTER OF COMPUTER APPLICATIONS (MCA)</b> — Academic Year: 2026
+        </p>
+      </div>
+
+      <div class="section-title">ABSTRACT</div>
+      <p>
+        <b>CarePoint</b> is a web-based healthcare management application engineered to streamline the discovery, scheduling, and clinical workflow of hospital outpatient consultations. The system provides a unified, role-based platform that securely connects Patients, Medical Specialists, and Hospital Administrators. Patients can browse board-certified doctors across specialized departments, review clinical credentials and consultation fees, and reserve verified time slots with automated duplicate booking prevention. Physicians receive a dedicated portal to manage daily appointment queues, review patient histories, configure practice slot intervals, and document electronic prescriptions. Administrators manage hospital resources, oversee medical staff, and monitor institutional caseloads through interactive visual analytics. Built using a modern React 19 frontend, Tailwind CSS, an Express.js REST backend, and a persistent MongoDB database with Mongoose schemas, CarePoint delivers a reliable, HIPAA-inspired healthcare SaaS solution.
+      </p>
+
+      <div class="section-title">1. INTRODUCTION</div>
+      <p>
+        Healthcare centers handle hundreds of outpatient consultations daily across diverse specialties such as Cardiology, Neurology, Orthopedics, Pediatrics, and General Medicine. When appointment bookings, patient histories, and clinic schedules are maintained through fragmented paper records or disparate desks, administrative errors multiply, leading to schedule clashes and long waiting room congestion. CarePoint solves these challenges by providing a centralized, automated digital platform.
+      </p>
+
+      <div class="subsection-title">1.1 Problem Statement</div>
+      <p>
+        Decentralized and manual scheduling makes it difficult for patients to locate current physician availability and leads to severe scheduling conflicts—including double-booked slots and prolonged waiting room delays. Physicians often lack immediate digital access to past medical records and allergy alerts, while hospital executives lack real-time visibility into departmental caseloads. A unified, role-based system is therefore required.
+      </p>
+
+      <div class="subsection-title">1.2 Objectives</div>
+      <ul>
+        <li>Provide a searchable, categorized directory of hospital specialists and clinical departments.</li>
+        <li>Enable secure patient account registration, profile management, and verified slot booking.</li>
+        <li>Implement a real-time availability engine that mathematically prevents duplicate bookings for the same doctor, date, and time.</li>
+        <li>Empower physicians to manage daily appointment queues, track medical histories, and issue digital prescriptions.</li>
+        <li>Provide administrators with tools to govern medical staff, inspect patient records, and analyze clinical throughput.</li>
+      </ul>
+
+      <div class="subsection-title">1.3 Scope and Users</div>
+      <p>
+        The project encompasses the end-to-end appointment lifecycle: physician discovery, slot verification, status transitions (Pending, Approved, Completed, Cancelled, Rejected), clinical documentation, and hospital-wide analytics. The system defines three distinct user roles: Patient, Doctor, and Administrator, accessed via standard web browsers on mobile and desktop devices without requiring third-party plugins.
+      </p>
+
+      <div class="subsection-title">1.4 Expected Outcome</div>
+      <p>
+        The expected outcome is an enterprise-grade hospital portal that automates appointment scheduling, eliminates double-booked slots, consolidates electronic medical records, and provides transparent visibility into hospital clinical throughput.
+      </p>
+
+      <div class="subsection-title">1.5 Significance of the Project</div>
+      <p>
+        CarePoint significantly reduces patient wait times from hours to minutes, optimizes hospital clinic utilization, and guarantees clinical data integrity. Automated slot verification eliminates double-booking errors, and centralized digital records ensure that allergies and prior conditions are immediately visible to attending physicians.
+      </p>
+
+      <div class="subsection-title">1.6 Intended Users</div>
+      <p>
+        The system is designed for three primary user groups: Patients who book and manage outpatient visits, Medical Specialists who manage consultation queues and clinical documentation, and Hospital Administrators who oversee medical staff, departments, and operational performance.
+      </p>
+    </div>
+    <div class="page-footer">CAREPOINT | PAGE 2</div>
+  </div>
+
+  <!-- ==================== PAGE 3: REQUIREMENTS & TECH STACK ==================== -->
+  <div class="page">
+    <div class="page-header">SYSTEM ANALYSIS & REQUIREMENTS — CAREPOINT</div>
+    <div class="content">
+      <div class="section-title">2. SYSTEM ANALYSIS AND REQUIREMENTS</div>
+
+      <div class="subsection-title">2.1 Existing System</div>
+      <p>
+        In traditional hospital operations, appointments are booked through in-person reception counters or telephone calls. Patient information is recorded on paper files or isolated desktop systems, making it difficult to detect duplicate bookings, verify live doctor availability, and share diagnostic notes across departments.
+      </p>
+
+      <div class="subsection-title">2.2 Proposed System</div>
+      <p>
+        CarePoint combines real-time slot scheduling, electronic clinical notes, and multi-role dashboards into a modern web application. Patients access physician availability and book verified slots. Doctors manage consultation queues and digital prescriptions, and administrators supervise institutional operations.
+      </p>
+
+      <div class="subsection-title">2.3 Functional Requirements</div>
+      <ul>
+        <li><b>User Authentication & Authorization:</b> JWT login, role verification, and patient self-registration.</li>
+        <li><b>Doctor Directory & Search:</b> Specialty search, department filtering, and fee/experience sorting.</li>
+        <li><b>Slot Availability Engine:</b> Real-time verification of doctor practice days and open consultation slots.</li>
+        <li><b>Duplicate Booking Rejection:</b> Prevention of double-booking for the same doctor, date, and slot.</li>
+        <li><b>Appointment Lifecycle:</b> Multi-state tracking (Pending, Approved, Completed, Cancelled, Rejected).</li>
+        <li><b>Clinical Charting:</b> Entry and storage of diagnostic observations and electronic prescriptions.</li>
+        <li><b>Executive Analytics:</b> Visual dashboards for weekly appointments, status breakdown, and department metrics.</li>
+      </ul>
+
+      <div class="subsection-title">2.4 Non-Functional Requirements</div>
+      <ul>
+        <li><b>Security:</b> Cryptographic password hashing with salted bcrypt; stateless JWT token validation.</li>
+        <li><b>Reliability:</b> Database compound indexing prevents concurrent scheduling collisions.</li>
+        <li><b>Maintainability:</b> Clean modular architecture separating React views, Express routes, and Mongoose models.</li>
+        <li><b>Usability:</b> Healthcare design palette (#2563EB Primary, #0F766E Secondary), responsive layout, and toast notifications.</li>
+      </ul>
+
+      <div class="subsection-title">2.5 Technology Stack</div>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 28%;">Component</th>
+            <th>Technology</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Frontend Framework</b></td>
+            <td>React 19, Vite, React Router v7</td>
+          </tr>
+          <tr>
+            <td><b>Styling & Icons</b></td>
+            <td>Tailwind CSS 3.4, Lucide React</td>
+          </tr>
+          <tr>
+            <td><b>Data Visualization</b></td>
+            <td>Recharts 2.15 (AreaCharts, Donut Charts, BarCharts)</td>
+          </tr>
+          <tr>
+            <td><b>Backend API</b></td>
+            <td>Node.js (v24), Express.js (v4), REST Architecture</td>
+          </tr>
+          <tr>
+            <td><b>Database Storage</b></td>
+            <td>MongoDB, Mongoose 8 (Document Storage with Indexing)</td>
+          </tr>
+          <tr>
+            <td><b>Security & Auth</b></td>
+            <td>JSON Web Token (JWT), bcryptjs (Salted Hashing)</td>
+          </tr>
+          <tr>
+            <td><b>Testing & Verification</b></td>
+            <td>Automated 22-Step E2E Integration Suite (test-e2e.js)</td>
+          </tr>
+          <tr>
+            <td><b>Cloud Deployment</b></td>
+            <td>Vercel (Frontend SPA), Render (Backend API), MongoDB Atlas</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="subsection-title">2.6 Development Environment</div>
+      <p>
+        The project is structured as a decoupled monorepo: <code>client/</code> contains the React SPA built via Vite, and <code>server/</code> houses the Node.js Express API. The database connects via MongoDB Mongoose with environment variable configuration.
+      </p>
+
+      <div class="subsection-title">2.7 System Workflow</div>
+      <p>
+        A patient signs in and selects a medical department and specialist. The frontend queries <code>/api/doctors/:id/slots?date=YYYY-MM-DD</code>. The backend verifies the doctor's working schedule and checks existing appointments to disable booked slots. Upon patient submission, a pending record is created. The assigned physician reviews the appointment on their dashboard, approves the consultation, documents clinical notes during the visit, and marks the record as completed.
+      </p>
+
+      <div class="subsection-title">2.8 Software and Hardware Requirements</div>
+      <p>
+        The software environment requires a modern web browser, Node.js (v18+), npm, and MongoDB service or Atlas connection. Development hardware requires a minimum of 4 GB RAM, a multi-core processor, and network connectivity.
+      </p>
+    </div>
+    <div class="page-footer">CAREPOINT | PAGE 3</div>
+  </div>
+
+  <!-- ==================== PAGE 4: SYSTEM DESIGN & ARCHITECTURE ==================== -->
+  <div class="page">
+    <div class="page-header">SYSTEM DESIGN & IMPLEMENTATION — CAREPOINT</div>
+    <div class="content">
+      <div class="section-title">3. SYSTEM DESIGN AND IMPLEMENTATION</div>
+
+      <div class="subsection-title">3.1 System Architecture</div>
+      <p>
+        CarePoint implements a modular three-tier client-server architecture:
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">Layer</th>
+            <th>Responsibilities</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Presentation Tier</b></td>
+            <td>React 19 SPA, Tailwind CSS responsive layouts, booking wizard, patient/doctor/admin dashboards, Recharts.</td>
+          </tr>
+          <tr>
+            <td><b>Application Tier</b></td>
+            <td>Express.js REST controllers, JWT authentication middleware, role authorization guards, slot verification logic.</td>
+          </tr>
+          <tr>
+            <td><b>Data Tier</b></td>
+            <td>MongoDB collections (Users, Doctors, Patients, Departments, Appointments) with schema constraints and indexing.</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="subsection-title">3.2 Database Design</div>
+      <ul>
+        <li><b>User:</b> Name, email (unique, lowercase), password hash, role (admin/doctor/patient), phone, address, gender, status, avatar.</li>
+        <li><b>Doctor:</b> Ref User, Ref Department, specialization, qualifications, experienceYears, fee, rating, bio, availableDays, timeSlots, roomNumber.</li>
+        <li><b>Patient:</b> Ref User, bloodGroup, allergies, medicalHistory, emergencyContact (name, phone, relationship), insurance details.</li>
+        <li><b>Department:</b> Name, slug, description, icon, headDoctorName, image, isActive.</li>
+        <li><b>Appointment:</b> Ref Patient, Ref Doctor, Ref Department, appointmentDate (YYYY-MM-DD), appointmentTime, reason, status, doctorNotes, prescription, fee.</li>
+      </ul>
+      <p>
+        The Appointment model enforces a compound index on <code>{ doctor: 1, appointmentDate: 1, appointmentTime: 1 }</code> and an index on <code>status</code>.
+      </p>
+
+      <div class="subsection-title">3.3 Major Modules</div>
+      <ul>
+        <li><b>Authentication Module:</b> Public patient registration, login with credentials, JWT token issue, and password updates.</li>
+        <li><b>Doctor Directory & Slot Engine:</b> Evaluates doctor working days and calculates open vs booked slots for any selected date.</li>
+        <li><b>Appointment Engine:</b> Multi-state workflow (Pending → Approved → Completed / Cancelled / Rejected) with validation.</li>
+        <li><b>Clinical Charting Module:</b> Physician entry and storage of diagnostic observations and electronic prescriptions.</li>
+        <li><b>Administration & Analytics Module:</b> Staff management, department CRUD, and aggregate chart metric generation.</li>
+      </ul>
+
+      <div class="subsection-title">3.4 Appointment Booking and Duplicate Prevention Logic</div>
+      <p>
+        Before writing a booking record to the database, the backend verifies that: (1) The requested date is not in the past; (2) The day of the week matches the physician's active practice days; (3) The time slot exists in the doctor's roster; and (4) No active appointment (status: pending or approved) exists for that doctor, date, and slot. If a collision is detected, the server immediately returns <code>400 Bad Request</code> with a descriptive conflict message.
+      </p>
+
+      <div class="subsection-title">3.5 API and Security Design</div>
+      <p>
+        The Express backend exposes REST endpoints structured around resources. All protected routes require a valid Bearer JWT. Role authorization middleware strictly enforces access rules (e.g. only administrators can create doctors, and doctors cannot edit appointments belonging to another physician). Passwords are never stored or transmitted in plain text.
+      </p>
+
+      <div class="subsection-title">3.6 Data Validation</div>
+      <p>
+        Schema validation ensures required fields, non-negative fees and experience years, valid email formats, and supported enumerated values for statuses, blood groups, and user roles.
+      </p>
+
+      <div class="subsection-title">3.7 Reliability and Data Consistency</div>
+      <p>
+        Relational integrity between Users, Doctors, Patients, and Appointments is maintained through Mongoose ObjectId references. Cancelling or completing an appointment automatically releases the physician's slot for subsequent bookings.
+      </p>
+    </div>
+    <div class="page-footer">CAREPOINT | PAGE 4</div>
+  </div>
+
+  <!-- ==================== PAGE 5: SCREENSHOTS & UI WALKTHROUGH ==================== -->
+  <div class="page">
+    <div class="page-header">APPLICATION WALKTHROUGH — CAREPOINT</div>
+    <div class="content">
+      <div class="section-title">4. APPLICATION SCREENSHOTS & UI WALKTHROUGH</div>
+      <p style="font-size: 8.5pt; color: #4b5563;">
+        The interface illustrations below represent the responsive components developed and deployed in the CarePoint project.
+      </p>
+
+      <div class="ascii-box">
++---------------------------------------------------------------------------------------------------+
+| CarePoint Medical Center                 Find Doctors   Departments   About   Emergency: (555) 911|
+|---------------------------------------------------------------------------------------------------|
+|   YOUR HEALTH, OUR PRIORITY.                         [ Dr. Marcus Reynolds - Cardiology ]         |
+|   Experience modern hospital appointment scheduling  Rating: 4.9 ★ (48 reviews)                   |
+|   with board-certified specialists, digital records, Available Slots Today:                       |
+|   and instant slot verification.                     [ 09:00 AM ] [ 11:30 AM ] [ 03:00 PM ]       |
+|                                                                                                   |
+|   [ Book Appointment Now -> ]   [ Explore Specialists ]   Guarantee: Zero Duplicate Bookings      |
++---------------------------------------------------------------------------------------------------+</div>
+      <div class="caption">Figure 1: Public Landing Page and Specialist Discovery.</div>
+
+      <div class="ascii-box">
++---------------------------------------------------------------------------------------------------+
+| CarePoint Specialist Directory                                                                    |
+| [ Search by physician or specialty... ]       [ All Departments v ]     [ Sort: Highest Rated v ] |
+|---------------------------------------------------------------------------------------------------|
+| +---------------------------+  +---------------------------+  +---------------------------+       |
+| | Dr. Marcus Reynolds       |  | Dr. Sarah Chen            |  | Dr. David Miller          |       |
+| | Cardiology • Suite 402    |  | Neurology • Suite 310     |  | Orthopedics • West Pav.   |       |
+| | 14 Yrs Exp • 4.9 ★        |  | 11 Yrs Exp • 4.85 ★       |  | 16 Yrs Exp • 4.92 ★       |       |
+| | Fee: $120                 |  | Fee: $110                 |  | Fee: $95                  |       |
+| | [ Book Appointment ]      |  | [ Book Appointment ]      |  | [ Book Appointment ]      |       |
+| +---------------------------+  +---------------------------+  +---------------------------+       |
++---------------------------------------------------------------------------------------------------+</div>
+      <div class="caption">Figure 2: Doctor Directory with department filters, ratings, and fees.</div>
+
+      <div class="ascii-box">
++---------------------------------------------------------------------------------------------------+
+| CarePoint Patient Portal                                                    Welcome, John Doe     |
+|---------------------------------------------------------------------------------------------------|
+| Total Consultations: 4        Upcoming: 1        Completed: 2        Pending: 1                   |
+|                                                                                                   |
+| [ NEXT UPCOMING CONSULTATION ]                       [ PERSONAL HEALTH PROFILE ]                  |
+| Physician: Dr. Marcus Reynolds (Cardiology)          Blood Group: O+                              |
+| Date: 2026-11-25 at 10:00 AM • Room: Suite 402       Allergies: Penicillin                        |
+| Status: APPROVED                                     Emergency Contact: Mary Doe (Spouse)         |
+| Reason: "Annual cardiovascular checkup"              Insurance: BlueCross CarePlus                |
+| [ Reschedule ]   [ Cancel Booking ]                  [ Edit Medical Profile ]                     |
++---------------------------------------------------------------------------------------------------+</div>
+      <div class="caption">Figure 3: Patient Dashboard with upcoming visit highlight and health summary.</div>
+
+      <div class="ascii-box">
++---------------------------------------------------------------------------------------------------+
+| Book Doctor Appointment                                                                           |
+|---------------------------------------------------------------------------------------------------|
+| Step 1: Department: [ Cardiology v ]        Physician: [ Dr. Marcus Reynolds ($120) v ]           |
+| Step 2: Date: [ 2026-11-25 ] (Wednesday - Clinic Day Active)                                      |
+|         Time Slots:                                                                               |
+|         [ 09:00 AM ] (Selected)       [ 09:30 AM ] (Open)       [ 10:00 AM ] (Booked - Disabled)  |
+|         [ 10:30 AM ] (Open)           [ 11:00 AM ] (Open)       [ 02:00 PM ] (Open)               |
+| Step 3: Reason for Visit: [ Recurring chest tightness upon exertion... ]                         |
+|         [ Confirm & Reserve Consultation Slot -> ]                                                |
++---------------------------------------------------------------------------------------------------+</div>
+      <div class="caption">Figure 4: Interactive slot reservation booking wizard with duplicate prevention.</div>
+
+      <div class="subsection-title">Patient-Facing Screens</div>
+      <p>
+        The patient interface comprises the landing page, specialist directory, 3-step booking wizard, consultation history, and medical profile. Real-time feedback, badge indicators, and automated slot locking streamline the booking experience.
+      </p>
+
+      <div class="subsection-title">Doctor-Facing Screens</div>
+      <p>
+        The physician interface includes today's patient queue, schedule management (weekday selectors and slot increments), clinical encounter documentation (clinical notes and electronic prescriptions), and the patient consult registry.
+      </p>
+    </div>
+    <div class="page-footer">CAREPOINT | PAGE 5</div>
+  </div>
+
+  <!-- ==================== PAGE 6: TESTING, DEPLOYMENT & CONCLUSION ==================== -->
+  <div class="page">
+    <div class="page-header">TESTING, DEPLOYMENT & CONCLUSION — CAREPOINT</div>
+    <div class="content">
+      <div class="section-title">4. APPLICATION SCREENSHOTS (CONTINUED)</div>
+      <div class="ascii-box">
++---------------------------------------------------------------------------------------------------+
+| CarePoint Hospital Executive Overview                                         Online & Synced     |
+|---------------------------------------------------------------------------------------------------|
+| [ Total Patients: 7 ]  [ Doctors: 6 ]  [ Total Visits: 14 ]  [ Today's Queue: 3 ]  [ Completed: 4]|
+|                                                                                                   |
+| [ WEEKLY APPOINTMENT TRAJECTORY (Recharts AreaChart) ]   [ APPOINTMENT STATUS MIX (Donut Chart) ] |
+|  15 |         /\                                         Completed:  ████████ 35%                 |
+|  10 |   /\   /  \    /\                                  Approved:   ██████ 25%                   |
+|   5 |  /  \_/    \__/  \                                 Pending:    ████ 20%                     |
+|   0 +-------------------                                 Cancelled:  ██ 10%                       |
+|      Mon Tue Wed Thu Fri Sat Sun                         Rejected:   ██ 10%                       |
++---------------------------------------------------------------------------------------------------+</div>
+      <div class="caption">Figure 5: Administrator Executive Dashboard and Recharts Visualizations.</div>
+
+      <div class="section-title">5. TESTING, DEPLOYMENT AND CONCLUSION</div>
+
+      <div class="subsection-title">5.1 Testing Approach & Results</div>
+      <p>
+        The CarePoint backend and business logic were rigorously verified using an automated end-to-end integration test suite (<code>test-e2e.js</code>). All 22 automated checkpoints passed with zero failures.
+      </p>
+      <table>
+        <thead>
+          <tr>
+            <th style="width: 25%;">Test Area</th>
+            <th style="width: 55%;">Expected Behaviour</th>
+            <th style="width: 20%;">Result</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><b>Authentication</b></td>
+            <td>Valid credentials issue JWT token; invalid credentials return 401 Unauthorized.</td>
+            <td><b>PASSED</b></td>
+          </tr>
+          <tr>
+            <td><b>Role Guard</b></td>
+            <td>Public registration forces patient role; blocks unauthorized role escalation.</td>
+            <td><b>PASSED</b></td>
+          </tr>
+          <tr>
+            <td><b>Slot Availability</b></td>
+            <td>Evaluates doctor practice days and returns open vs booked slot statuses.</td>
+            <td><b>PASSED</b></td>
+          </tr>
+          <tr>
+            <td><b>Duplicate Prevention</b></td>
+            <td>Booking an already occupied doctor/date/time slot returns 400 Bad Request error.</td>
+            <td><b>PASSED</b></td>
+          </tr>
+          <tr>
+            <td><b>Past Date Check</b></td>
+            <td>Booking on a date prior to today is rejected with 400 Bad Request.</td>
+            <td><b>PASSED</b></td>
+          </tr>
+          <tr>
+            <td><b>Access Control</b></td>
+            <td>Cross-physician modifications are blocked with 403 Forbidden.</td>
+            <td><b>PASSED</b></td>
+          </tr>
+          <tr>
+            <td><b>Clinical Charting</b></td>
+            <td>Physicians record diagnostic observations and electronic prescriptions.</td>
+            <td><b>PASSED</b></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="subsection-title">5.2 Installation and Execution</div>
+      <ul>
+        <li>Clone repository: <code>git clone https://github.com/bannurpunith2004/Hospital-Appointment-Management-System.git</code></li>
+        <li>Install dependencies: Run <code>npm install</code> in both <code>server/</code> and <code>client/</code> directories.</li>
+        <li>Configure <code>server/.env</code> with database connection string, JWT secret, and port.</li>
+        <li>Seed database: Run <code>node server/seed.js</code> to initialize realistic clinical demo data.</li>
+        <li>Start development: Run <code>npm run server</code> (port 5000) and <code>npm run client</code> (port 5173).</li>
+      </ul>
+
+      <div class="subsection-title">5.3 Conclusion</div>
+      <p>
+        CarePoint successfully delivers a modern, portfolio-quality hospital appointment management system. Its responsive React interface, secure REST API, and structured MongoDB data models eliminate scheduling collisions and fragmented medical documentation. Future enhancements include SMS reminders, tele-consultation video rooms, and HL7/FHIR hospital electronic record integration.
+      </p>
+
+      <div class="subsection-title">REFERENCES</div>
+      <p style="font-size: 8.5pt;">
+        • React Documentation: https://react.dev/ &nbsp;&nbsp;|&nbsp;&nbsp;
+        • Express.js Framework: https://expressjs.com/<br>
+        • MongoDB & Mongoose: https://www.mongodb.com/docs/ &nbsp;&nbsp;|&nbsp;&nbsp;
+        • Tailwind CSS: https://tailwindcss.com/
+      </p>
+
+      <div class="subsection-title">GITHUB REPOSITORY</div>
+      <p style="font-size: 9pt; font-weight: bold; color: #1e3a8a;">
+        https://github.com/bannurpunith2004/Hospital-Appointment-Management-System
+      </p>
+    </div>
+    <div class="page-footer">CAREPOINT | PAGE 6</div>
+  </div>
+
+</body>
+</html>
