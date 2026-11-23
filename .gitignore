@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+*/node_modules/
+
+# Production Build
+dist/
+build/
+client/dist/
+
+# Environment Variables (Never commit secrets!)
+.env
+.env.local
+.env.production
+server/.env
+client/.env
+
+# Logs & Runtime
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Editor & OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Misc
+.cache/
+.oxlintrc.json
