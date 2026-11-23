@@ -33,3 +33,5 @@ Thumbs.db
 
 # Generated Documents / Reports (Excluded from git repo)
 *.pdf
+screenshots/
+client/public/screenshots/
