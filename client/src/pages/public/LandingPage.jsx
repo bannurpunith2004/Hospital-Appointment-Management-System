@@ -20,6 +20,8 @@ import {
   Building2,
   Users,
   Award,
+  FileText,
+  Download,
 } from 'lucide-react';
 import { doctorService } from '../../services/doctorService';
 import { departmentService } from '../../services/departmentService';
@@ -119,6 +121,16 @@ export const LandingPage = () => {
                   <UserCheck className="w-5 h-5 text-blue-600" />
                   <span>Explore Specialists</span>
                 </Link>
+
+                <a
+                  href="/CarePoint_Project_Report.pdf"
+                  download="CarePoint_Project_Report.pdf"
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-blue-50 text-blue-800 font-bold text-base border border-blue-200 shadow-sm hover:bg-blue-100 hover:border-blue-300 transition-all"
+                  title="Download Official 6-Page Academic Project Report"
+                >
+                  <FileText className="w-5 h-5 text-blue-600" />
+                  <span>Report PDF</span>
+                </a>
               </div>
 
               {/* Trust Indicators */}

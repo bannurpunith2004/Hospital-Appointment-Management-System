@@ -2,6 +2,9 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import morgan from 'morgan';
+import path from 'path';
+import fs from 'fs';
+import { fileURLToPath } from 'url';
 import connectDB from './config/db.js';
 import { errorHandler } from './middleware/errorHandler.js';
 
@@ -61,6 +64,21 @@ app.get('/api/health', (req, res) => {
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
   });
+});
+
+// Download Academic Project Report PDF
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+app.get('/api/report/download', (req, res) => {
+  const reportPath = path.resolve(__dirname, '..', 'CarePoint_Project_Report.pdf');
+  if (fs.existsSync(reportPath)) {
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename="CarePoint_Project_Report.pdf"');
+    res.download(reportPath, 'CarePoint_Project_Report.pdf');
+  } else {
+    res.status(404).json({ success: false, message: 'Report PDF not found on server' });
+  }
 });
 
 // API Routes

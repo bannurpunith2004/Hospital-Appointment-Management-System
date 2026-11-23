@@ -221,70 +221,22 @@ Relational integrity between User, Doctor, and Patient profiles is maintained vi
 
 ### 4. APPLICATION SCREENSHOTS & UI WALKTHROUGH
 
-*The interface illustrations below represent the responsive components built and deployed in the CarePoint project.*
+*High-resolution application screenshots captured live from the operational CarePoint system (stored in `screenshots/` and embedded in the generated PDF):*
 
-```text
-+-------------------------------------------------------------------------------------------------------+
-|  CarePoint Medical Center              Find Doctors    Departments    About    Emergency: (555) 911   |
-|-------------------------------------------------------------------------------------------------------|
-|                                                                                                       |
-|    YOUR HEALTH, OUR PRIORITY.                              [ Dr. Marcus Reynolds - Cardiology ]       |
-|    Experience modern hospital appointment scheduling       Rating: 4.9 ★ (48 reviews)                 |
-|    with board-certified specialists, digital records,      Available Slots Today:                     |
-|    and instant slot verification.                          [ 09:00 AM ] [ 11:30 AM ] [ 03:00 PM ]     |
-|                                                                                                       |
-|    [ Book Appointment Now -> ]   [ Explore Specialists ]   Guarantee: Zero Duplicate Bookings         |
-|                                                                                                       |
-+-------------------------------------------------------------------------------------------------------+
-```
-*Figure 1: Public Landing Page and Specialist Discovery.*
+- **Figure 4.1: Public Landing Page & Healthcare Hero Section** (`screenshots/01_landing_hero.png`)
+  Modern healthcare SaaS landing page featuring hospital emergency hotline banner, value propositions, key clinical statistics (99.4% satisfaction, 50+ physicians, <15 min wait times), direct PDF download CTA, and specialist discovery.
 
-```text
-+-------------------------------------------------------------------------------------------------------+
-|  CarePoint Specialist Directory                                                                       |
-|  [ Search by physician name or specialty... ]   [ All Departments v ]   [ Sort: Highest Rated v ]     |
-|-------------------------------------------------------------------------------------------------------|
-|  +---------------------------+  +---------------------------+  +---------------------------+          |
-|  | Dr. Marcus Reynolds       |  | Dr. Sarah Chen            |  | Dr. David Miller          |          |
-|  | Cardiology • Suite 402    |  | Neurology • Suite 310     |  | Orthopedics • West Pav.   |          |
-|  | 14 Yrs Exp • 4.9 ★        |  | 11 Yrs Exp • 4.85 ★       |  | 16 Yrs Exp • 4.92 ★       |          |
-|  | Fee: $120                 |  | Fee: $110                 |  | Fee: $95                  |          |
-|  | [ Book Appointment ]      |  | [ Book Appointment ]      |  | [ Book Appointment ]      |          |
-|  +---------------------------+  +---------------------------+  +---------------------------+          |
-+-------------------------------------------------------------------------------------------------------+
-```
-*Figure 2: Doctor Directory with department filters, ratings, and fees.*
+- **Figure 4.2: Doctor Directory with Department Filters & Fee Schedule** (`screenshots/02_doctor_directory.png`)
+  Searchable catalog featuring multi-criteria filtering by medical department, doctor name, and consultation fees. Doctor cards display verified credentials, room suites, star ratings, and 1-click booking triggers.
 
-```text
-+-------------------------------------------------------------------------------------------------------+
-|  CarePoint Patient Portal                                                       Welcome, John Doe     |
-|-------------------------------------------------------------------------------------------------------|
-|  Total Consultations: 4       Upcoming: 1       Completed: 2       Pending: 1                         |
-|                                                                                                       |
-|  [ NEXT UPCOMING CONSULTATION ]                        [ PERSONAL HEALTH PROFILE ]                    |
-|  Physician: Dr. Marcus Reynolds (Cardiology)           Blood Group: O+                                |
-|  Date: 2026-11-25 at 10:00 AM • Room: Suite 402        Allergies: Penicillin                          |
-|  Status: APPROVED                                      Emergency Contact: Mary Doe (Spouse)           |
-|  Reason: "Annual cardiovascular checkup"               Insurance: BlueCross CarePlus                  |
-|  [ Reschedule ]   [ Cancel Booking ]                   [ Edit Medical Profile ]                       |
-+-------------------------------------------------------------------------------------------------------+
-```
-*Figure 3: Patient Dashboard with upcoming visit highlight and health summary.*
+- **Figure 4.3: Doctor Dashboard with Consultation Queue & Practice Schedule** (`screenshots/06_doctor_dashboard.png`)
+  Physician encounter portal showing today's appointments, upcoming patient consultations, quick action buttons (Accept, Reject, Complete), patient clinical notes, and prescription entry modals.
 
-```text
-+-------------------------------------------------------------------------------------------------------+
-|  Book Doctor Appointment                                                                              |
-|-------------------------------------------------------------------------------------------------------|
-|  Step 1: Department: [ Cardiology v ]     Physician: [ Dr. Marcus Reynolds ($120) v ]                 |
-|  Step 2: Date: [ 2026-11-25 ] (Wednesday - Clinic Day Active)                                         |
-|          Time Slots:                                                                                  |
-|          [ 09:00 AM ] (Selected)     [ 09:30 AM ] (Open)         [ 10:00 AM ] (Booked - Disabled)     |
-|          [ 10:30 AM ] (Open)         [ 11:00 AM ] (Open)         [ 02:00 PM ] (Open)                  |
-|  Step 3: Reason for Visit: [ Recurring chest tightness upon exertion... ]                            |
-|          [ Confirm & Reserve Consultation Slot -> ]                                                   |
-+-------------------------------------------------------------------------------------------------------+
-```
-*Figure 4: Interactive slot reservation booking wizard with duplicate prevention.*
+- **Figure 4.4: Interactive Patient Portal & Medical Profile** (`screenshots/07_patient_portal.png`)
+  Patient command center presenting upcoming appointment countdown cards, booking history with status badges, and medical summary (blood group, allergies, emergency contacts).
+
+- **Figure 4.5: Administrator Command Center & Recharts Analytics** (`screenshots/05_admin_dashboard.png`)
+  Executive administrative interface displaying live hospital KPI counters (Total Patients, Doctors, Appointments, Completed, Pending) alongside Recharts visualizations (Weekly Appointment Trajectory and Status Mix donut charts).
 
 #### Patient-Facing Screens
 The patient interface comprises the landing page, specialist directory, 3-step booking wizard, consultation history, and medical profile. Real-time feedback, badge indicators, and automated slot locking streamline the booking experience.
@@ -292,45 +244,14 @@ The patient interface comprises the landing page, specialist directory, 3-step b
 #### Doctor-Facing Screens
 The physician interface includes today's patient queue, schedule management (weekday selectors and slot increments), clinical encounter documentation (clinical notes and electronic prescriptions), and the patient consult registry.
 
+#### Administrative Governance
+The administrator interface provides complete oversight of medical personnel, patient registries, department configurations, and hospital appointment queues, backed by visual statistical summaries and interactive charts.
+
 ---
 
 <div style="page-break-after: always;"></div>
 
 **CAREPOINT | PAGE 6**
-
-### 4. APPLICATION SCREENSHOTS (CONTINUED)
-
-```text
-+-------------------------------------------------------------------------------------------------------+
-|  CarePoint Hospital Executive Overview                                         Online & Synced        |
-|-------------------------------------------------------------------------------------------------------|
-|  [ Total Patients: 7 ]  [ Doctors: 6 ]  [ Total Visits: 14 ]  [ Today's Queue: 3 ]  [ Completed: 4 ]  |
-|                                                                                                       |
-|  [ WEEKLY APPOINTMENT TRAJECTORY (Recharts AreaChart) ]     [ APPOINTMENT STATUS MIX (Donut) ]        |
-|   15 |         /\                                           Completed:  ████████ 35%                  |
-|   10 |   /\   /  \    /\                                    Approved:   ██████ 25%                    |
-|    5 |  /  \_/    \__/  \                                   Pending:    ████ 20%                      |
-|    0 +-------------------                                   Cancelled:  ██ 10%                        |
-|       Mon Tue Wed Thu Fri Sat Sun                           Rejected:   ██ 10%                        |
-+-------------------------------------------------------------------------------------------------------+
-```
-*Figure 5: Administrator Executive Dashboard and Recharts Visualizations.*
-
-```text
-+-------------------------------------------------------------------------------------------------------+
-|  Hospital Appointment Registry                                                                        |
-|  [ Search Patient/Doctor... ]  [ Status: All v ]  [ Dept: All v ]  [ Date: YYYY-MM-DD ]               |
-|-------------------------------------------------------------------------------------------------------|
-|  Patient         Physician            Date & Slot           Reason            Status     Actions      |
-|  ---------------------------------------------------------------------------------------------------  |
-|  John Doe        Dr. M. Reynolds      2026-11-25 10:00 AM   Cardio Checkup    APPROVED   [View] [Rx]  |
-|  Maria Garcia    Dr. Sarah Chen       2026-11-25 02:30 PM   Migraine Aura     APPROVED   [View] [Rx]  |
-|  Robert Taylor   Dr. James Wilson     2026-11-25 11:00 AM   Hypertension      PENDING    [Approve]    |
-+-------------------------------------------------------------------------------------------------------+
-```
-*Figure 6: Hospital Appointment Management Registry with status actions.*
-
----
 
 ### 5. TESTING, DEPLOYMENT AND CONCLUSION
 

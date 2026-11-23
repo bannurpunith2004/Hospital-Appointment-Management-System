@@ -10,6 +10,8 @@ import {
   CalendarCheck,
   PhoneCall,
   Shield,
+  FileText,
+  Download,
 } from 'lucide-react';
 
 export const Navbar = () => {
@@ -98,6 +100,16 @@ export const Navbar = () => {
 
           {/* Right Action Buttons */}
           <div className="hidden sm:flex items-center gap-3">
+            <a
+              href="/CarePoint_Project_Report.pdf"
+              download="CarePoint_Project_Report.pdf"
+              className="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl border border-blue-200 bg-blue-50/80 text-xs font-bold text-blue-700 hover:bg-blue-100 hover:border-blue-300 transition-all shadow-sm"
+              title="Download 6-Page Academic Project Report PDF"
+            >
+              <FileText className="w-3.5 h-3.5 text-blue-600" />
+              <span>Report PDF</span>
+            </a>
+
             {isAuthenticated ? (
               <div className="flex items-center gap-3">
                 <Link
@@ -173,6 +185,15 @@ export const Navbar = () => {
           </div>
 
           <div className="pt-4 border-t border-slate-100 flex flex-col gap-2">
+            <a
+              href="/CarePoint_Project_Report.pdf"
+              download="CarePoint_Project_Report.pdf"
+              onClick={() => setMobileMenuOpen(false)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl border border-blue-200 bg-blue-50 text-blue-700 text-sm font-bold shadow-sm"
+            >
+              <FileText className="w-4 h-4 text-blue-600" />
+              <span>Download Academic Report (PDF)</span>
+            </a>
             {isAuthenticated ? (
               <>
                 <Link

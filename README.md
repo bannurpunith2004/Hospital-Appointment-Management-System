@@ -5,6 +5,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas_Ready-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com)
+[![Project Report](https://img.shields.io/badge/Academic_Report-Download_PDF-DC2626?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](CarePoint_Project_Report.pdf)
+
+> 📄 **Academic Project Report Available**: Download the complete 6-page project report with live UI screenshots, system architecture diagrams, and test results:
+> **[📥 Download CarePoint_Project_Report.pdf (Direct File)](CarePoint_Project_Report.pdf)** | **[🌐 Raw GitHub Download](https://raw.githubusercontent.com/bannurpunith2004/Hospital-Appointment-Management-System/main/CarePoint_Project_Report.pdf)**
 
 **CarePoint** is an enterprise-grade, portfolio-ready Hospital Appointment Management System engineered with the MERN stack. Designed specifically to resemble high-end healthcare SaaS products, CarePoint delivers role-based access control (Admin, Doctor, Patient), automated duplicate booking prevention, live doctor slot availability synchronization, comprehensive electronic medical recordkeeping, interactive Recharts analytics, and responsive design.
 
