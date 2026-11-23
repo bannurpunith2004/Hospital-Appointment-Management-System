@@ -5,10 +5,6 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
 [![Node.js](https://img.shields.io/badge/Node.js-Express-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org)
 [![MongoDB](https://img.shields.io/badge/MongoDB-Atlas_Ready-47A248?style=for-the-badge&logo=mongodb&logoColor=white)](https://www.mongodb.com)
-[![Project Report](https://img.shields.io/badge/Academic_Report-Download_PDF-DC2626?style=for-the-badge&logo=adobeacrobatreader&logoColor=white)](CarePoint_Project_Report.pdf)
-
-> 📄 **Academic Project Report Available**: Download the complete 6-page project report with live UI screenshots, system architecture diagrams, and test results:
-> **[📥 Download CarePoint_Project_Report.pdf (Direct File)](CarePoint_Project_Report.pdf)** | **[🌐 Raw GitHub Download](https://raw.githubusercontent.com/bannurpunith2004/Hospital-Appointment-Management-System/main/CarePoint_Project_Report.pdf)**
 
 **CarePoint** is an enterprise-grade, portfolio-ready Hospital Appointment Management System engineered with the MERN stack. Designed specifically to resemble high-end healthcare SaaS products, CarePoint delivers role-based access control (Admin, Doctor, Patient), automated duplicate booking prevention, live doctor slot availability synchronization, comprehensive electronic medical recordkeeping, interactive Recharts analytics, and responsive design.
 
@@ -16,14 +12,16 @@
 
 ## Quick Evaluation Demo Accounts
 
-To test the multi-role experience immediately, you can use the built-in 1-click login buttons on the `/login` screen or sign in with these seeded credentials:
+To test the multi-role experience immediately in development, you can use the built-in 1-click demo login buttons on the `/login` screen:
 
-| Role | Email | Password | Access & Responsibilities |
-| :--- | :--- | :--- | :--- |
-| **Administrator** | `admin@carepoint.com` | `Admin@1234` | Executive overview, Doctor CRUD, Patient management, Department management, Analytics, All Appointments approval |
-| **Doctor** | `dr.reynolds@carepoint.com` | `Doctor@1234` | Today's queue, Patient chart notes, Clinical prescriptions, Consultation status, Practice slots & availability |
-| **Doctor (Alternative)**| `dr.chen@carepoint.com` | `Doctor@1234` | Chief of Neurology consultations and schedule |
-| **Patient** | `patient@carepoint.com` | `Patient@1234` | Slot booking wizard, Upcoming visits, Reschedule/Cancel, Prescription review, Medical profile & allergies |
+| Role | Email | Access & Responsibilities |
+| :--- | :--- | :--- |
+| **Administrator** | `admin@carepoint.com` | Executive overview, Doctor CRUD, Patient management, Department management, Analytics, All Appointments approval |
+| **Doctor** | `dr.reynolds@carepoint.com` | Today's queue, Patient chart notes, Clinical prescriptions, Consultation status, Practice slots & availability |
+| **Doctor (Alternative)**| `dr.chen@carepoint.com` | Chief of Neurology consultations and schedule |
+| **Patient** | `patient@carepoint.com` | Slot booking wizard, Upcoming visits, Reschedule/Cancel, Prescription review, Medical profile & allergies |
+
+*(Note: In local development, demo accounts are seeded via `node server/seed.js` with default passwords, or accessible via the 1-click autofill buttons on the login page).*
 
 ---
 
