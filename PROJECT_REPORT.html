@@ -2,10 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CarePoint - Academic Project Report</title>
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Inter:wght@400;600;700;800&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap');
+
+    @page {
+      size: A4 portrait;
+      margin: 0;
+    }
 
     * {
       box-sizing: border-box;
@@ -13,87 +17,72 @@
       padding: 0;
     }
 
-    body {
+    html, body {
       font-family: 'Times New Roman', Times, serif;
-      color: #111827;
-      background: #f3f4f6;
-      line-height: 1.45;
-      font-size: 10.5pt;
+      color: #0f172a;
+      background: #ffffff;
+      font-size: 10pt;
+      line-height: 1.35;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
     }
 
     .page {
       width: 210mm;
-      min-height: 297mm;
-      padding: 24mm 22mm 20mm 22mm;
-      margin: 15mm auto;
-      background: #ffffff;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      height: 297mm;
+      padding: 16mm 20mm 14mm 20mm;
+      margin: 0 auto;
+      page-break-after: always;
+      break-after: page;
       position: relative;
       display: flex;
-      flex-col;
       flex-direction: column;
       justify-content: space-between;
+      overflow: hidden;
+      background: #ffffff;
     }
 
-    @media print {
-      body {
-        background: transparent;
-      }
-      .page {
-        margin: 0;
-        box-shadow: none;
-        page-break-after: always;
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    /* Page Header and Footer */
     .page-header {
       font-size: 8.5pt;
       font-weight: bold;
-      color: #4b5563;
+      color: #475569;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 12px;
-      border-bottom: 1px solid #e5e7eb;
+      margin-bottom: 8px;
+      border-bottom: 1px solid #cbd5e1;
       padding-bottom: 4px;
     }
 
     .page-footer {
       font-size: 8.5pt;
-      color: #6b7280;
+      color: #64748b;
       text-align: center;
-      margin-top: 15px;
-      border-top: 1px solid #e5e7eb;
+      border-top: 1px solid #cbd5e1;
       padding-top: 6px;
-      font-weight: 600;
+      font-weight: bold;
       letter-spacing: 0.5px;
     }
 
     .content {
       flex: 1;
-    }
-
-    h1, h2, h3, h4 {
-      font-family: 'Times New Roman', Times, serif;
-      color: #0f172a;
+      display: flex;
+      flex-direction: column;
     }
 
     .title-primary {
       font-size: 26pt;
-      font-weight: 800;
+      font-weight: bold;
       color: #1e3a8a;
       letter-spacing: 1px;
       text-align: center;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .subtitle-primary {
       font-size: 13pt;
       text-align: center;
-      color: #374151;
-      margin-bottom: 35px;
+      color: #334155;
+      margin-bottom: 25px;
       font-style: italic;
     }
 
@@ -102,56 +91,56 @@
       font-weight: bold;
       text-align: center;
       letter-spacing: 1.5px;
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .section-title {
-      font-size: 11pt;
+      font-size: 10.5pt;
       font-weight: bold;
-      margin-top: 10px;
-      margin-bottom: 4px;
+      margin-top: 8px;
+      margin-bottom: 3px;
       color: #0f172a;
       text-transform: uppercase;
     }
 
     .subsection-title {
-      font-size: 10pt;
+      font-size: 9.5pt;
       font-weight: bold;
-      margin-top: 6px;
+      margin-top: 5px;
       margin-bottom: 2px;
       color: #1e293b;
     }
 
     p {
-      margin-bottom: 6px;
+      margin-bottom: 5px;
       text-align: justify;
     }
 
     ul {
-      margin-left: 20px;
-      margin-bottom: 6px;
+      margin-left: 18px;
+      margin-bottom: 5px;
     }
 
     li {
-      margin-bottom: 2px;
+      margin-bottom: 1.5px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin: 8px 0;
-      font-size: 9pt;
+      margin: 6px 0;
+      font-size: 8.5pt;
     }
 
     th, td {
       border: 1px solid #cbd5e1;
-      padding: 5px 8px;
+      padding: 4px 6px;
       text-align: left;
     }
 
     th {
-      background-color: #1e3a8a;
-      color: #ffffff;
+      background-color: #1e3a8a !important;
+      color: #ffffff !important;
       font-weight: bold;
     }
 
@@ -164,20 +153,19 @@
       border: 1px solid #cbd5e1;
       border-radius: 4px;
       font-family: 'Courier New', Courier, monospace;
-      font-size: 7.5pt;
-      line-height: 1.2;
-      padding: 8px;
-      margin: 6px 0;
+      font-size: 7pt;
+      line-height: 1.15;
+      padding: 6px 8px;
+      margin: 4px 0;
       white-space: pre;
-      overflow-x: auto;
     }
 
     .caption {
-      font-size: 8.5pt;
+      font-size: 8pt;
       font-style: italic;
-      color: #4b5563;
+      color: #475569;
       text-align: center;
-      margin-bottom: 8px;
+      margin-bottom: 6px;
     }
   </style>
 </head>
@@ -185,37 +173,37 @@
 
   <!-- ==================== PAGE 1: COVER PAGE ==================== -->
   <div class="page">
-    <div class="content" style="display: flex; flex-direction: column; justify-content: space-around; text-align: center; height: 100%; padding-top: 25mm;">
+    <div class="content" style="display: flex; flex-direction: column; justify-content: space-around; text-align: center; height: 100%; padding: 25mm 0;">
       <div>
         <div class="title-primary">CAREPOINT</div>
         <div class="subtitle-primary">A Smart Hospital Appointment Management System</div>
       </div>
 
-      <div style="margin: 30px 0;">
+      <div style="margin: 25px 0;">
         <div class="report-badge">PROJECT REPORT</div>
-        <p style="text-align: center; font-size: 10.5pt; color: #4b5563; max-width: 420px; margin: 0 auto;">
+        <p style="text-align: center; font-size: 10pt; color: #475569; max-width: 420px; margin: 0 auto;">
           Submitted in partial fulfilment of the requirements for the academic project
         </p>
       </div>
 
-      <div style="margin: 25px 0;">
-        <p style="text-align: center; font-size: 10.5pt; color: #374151; margin-bottom: 6px;">Submitted by</p>
-        <p style="text-align: center; font-size: 14pt; font-weight: bold; color: #0f172a; margin-bottom: 4px;">Likith Charan R S</p>
-        <p style="text-align: center; font-size: 11pt; color: #4b5563; font-weight: 600;">1CR25MC057</p>
+      <div style="margin: 20px 0;">
+        <p style="text-align: center; font-size: 10pt; color: #334155; margin-bottom: 4px;">Submitted by</p>
+        <p style="text-align: center; font-size: 14pt; font-weight: bold; color: #0f172a; margin-bottom: 2px;">Likith Charan R S</p>
+        <p style="text-align: center; font-size: 11pt; color: #475569; font-weight: 600;">1CR25MC057</p>
       </div>
 
-      <div style="margin: 25px 0;">
+      <div style="margin: 20px 0;">
         <p style="text-align: center; font-size: 11pt; font-weight: bold; color: #1e3a8a;">MASTER OF COMPUTER APPLICATIONS</p>
         <p style="text-align: center; font-size: 11.5pt; font-weight: bold; color: #0f172a;">CMR INSTITUTE OF TECHNOLOGY</p>
       </div>
 
-      <div style="margin: 25px 0;">
-        <p style="text-align: center; font-size: 10.5pt; color: #374151; margin-bottom: 4px;">Guided by</p>
+      <div style="margin: 20px 0;">
+        <p style="text-align: center; font-size: 10pt; color: #334155; margin-bottom: 4px;">Guided by</p>
         <p style="text-align: center; font-size: 13pt; font-weight: bold; color: #0f172a;">Prof. Daya Thummar</p>
       </div>
 
-      <div style="margin-top: 30px;">
-        <p style="text-align: center; font-size: 11pt; font-weight: 600; color: #4b5563;">Academic Year 2026–2027</p>
+      <div style="margin-top: 25px;">
+        <p style="text-align: center; font-size: 10.5pt; font-weight: 600; color: #475569;">Academic Year 2026–2027</p>
       </div>
     </div>
     <div class="page-footer">CAREPOINT | PAGE 1</div>
@@ -225,10 +213,10 @@
   <div class="page">
     <div class="page-header">PROJECT REPORT — CAREPOINT</div>
     <div class="content">
-      <div style="text-align: center; margin-bottom: 12px;">
-        <div style="font-size: 15pt; font-weight: bold; color: #1e3a8a;">CAREPOINT</div>
-        <div style="font-size: 10pt; font-style: italic; color: #4b5563;">A Smart Hospital Appointment Management System</div>
-        <p style="font-size: 8.5pt; color: #6b7280; margin-top: 2px; text-align: center;">
+      <div style="text-align: center; margin-bottom: 10px;">
+        <div style="font-size: 14pt; font-weight: bold; color: #1e3a8a;">CAREPOINT</div>
+        <div style="font-size: 9.5pt; font-style: italic; color: #475569;">A Smart Hospital Appointment Management System</div>
+        <p style="font-size: 8pt; color: #64748b; margin-top: 2px; text-align: center;">
           Submitted in partial fulfilment of the requirements for the award of the degree of<br>
           <b>MASTER OF COMPUTER APPLICATIONS (MCA)</b> — Academic Year: 2026
         </p>
@@ -260,7 +248,7 @@
 
       <div class="subsection-title">1.3 Scope and Users</div>
       <p>
-        The project encompasses the end-to-end appointment lifecycle: physician discovery, slot verification, status transitions (Pending, Approved, Completed, Cancelled, Rejected), clinical documentation, and hospital-wide analytics. The system defines three distinct user roles: Patient, Doctor, and Administrator, accessed via standard web browsers on mobile and desktop devices without requiring third-party plugins.
+        The project encompasses the end-to-end appointment lifecycle: physician discovery, slot verification, status transitions (Pending, Approved, Completed, Cancelled, Rejected), clinical documentation, and hospital-wide analytics. The system defines three distinct user roles: Patient, Doctor, and Administrator, accessed via standard web browsers on mobile and desktop devices without requiring third-party desktop client installations.
       </p>
 
       <div class="subsection-title">1.4 Expected Outcome</div>
@@ -275,7 +263,7 @@
 
       <div class="subsection-title">1.6 Intended Users</div>
       <p>
-        The system is designed for three primary user groups: Patients who book and manage outpatient visits, Medical Specialists who manage consultation queues and clinical documentation, and Hospital Administrators who oversee medical staff, departments, and operational performance.
+        The system serves three primary user groups: Patients who book and manage outpatient visits, Medical Specialists who manage consultation queues and clinical documentation, and Hospital Administrators who oversee medical staff, departments, and operational performance.
       </p>
     </div>
     <div class="page-footer">CAREPOINT | PAGE 2</div>
@@ -362,7 +350,7 @@
 
       <div class="subsection-title">2.6 Development Environment</div>
       <p>
-        The project is structured as a decoupled monorepo: <code>client/</code> contains the React SPA built via Vite, and <code>server/</code> houses the Node.js Express API. The database connects via MongoDB Mongoose with environment variable configuration.
+        The project is structured as a decoupled monorepo: <code>client/</code> contains the React SPA built via Vite, and <code>server/</code> houses the Node.js Express API. The database connects via MongoDB Mongoose with environment variable configuration. The README documents cloud configuration settings for frontend, backend, and database.
       </p>
 
       <div class="subsection-title">2.7 System Workflow</div>
@@ -460,7 +448,7 @@
     <div class="page-header">APPLICATION WALKTHROUGH — CAREPOINT</div>
     <div class="content">
       <div class="section-title">4. APPLICATION SCREENSHOTS & UI WALKTHROUGH</div>
-      <p style="font-size: 8.5pt; color: #4b5563;">
+      <p style="font-size: 8pt; color: #475569; margin-bottom: 4px;">
         The interface illustrations below represent the responsive components developed and deployed in the CarePoint project.
       </p>
 
@@ -622,7 +610,7 @@
       </p>
 
       <div class="subsection-title">REFERENCES</div>
-      <p style="font-size: 8.5pt;">
+      <p style="font-size: 8pt;">
         • React Documentation: https://react.dev/ &nbsp;&nbsp;|&nbsp;&nbsp;
         • Express.js Framework: https://expressjs.com/<br>
         • MongoDB & Mongoose: https://www.mongodb.com/docs/ &nbsp;&nbsp;|&nbsp;&nbsp;
@@ -630,7 +618,7 @@
       </p>
 
       <div class="subsection-title">GITHUB REPOSITORY</div>
-      <p style="font-size: 9pt; font-weight: bold; color: #1e3a8a;">
+      <p style="font-size: 8.5pt; font-weight: bold; color: #1e3a8a;">
         https://github.com/bannurpunith2004/Hospital-Appointment-Management-System
       </p>
     </div>
